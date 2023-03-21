@@ -1,3 +1,4 @@
 #!/bin/bash
 REGION='us-east-1'
-aws ec2 describe-vpcs --region $REGION | ".vpcid"
+FORMAT='JOSN'
+aws ec2 describe-vpcs --region $REGION --OUTPUT $FORMAT | ".vpcid"
