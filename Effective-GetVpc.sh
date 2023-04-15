@@ -1,7 +1,8 @@
 #!/bin/bash
 REGIONS=$@
-for REGION in ${REGIONS}; do
+for REGION in ${REGIONS};
+ do
     echo "lets get the vpc id for Region $REGION"
-    aws ec2 describe-vpcs --region $REGION --output json | jq ".Vpcs[].VpcId"
+    aws ec2 describe-subnets --region $REGION --output json | jq ".Subnets[] | .VpcId, .SubnetId"
     echo '------------------------------------------------------------------------------'
 done
