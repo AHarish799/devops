@@ -19,5 +19,6 @@ if [ $# -gt 0 ]; then
         echo "Login Username Is $USER Password is $PASS"
         passwd -e $USER
     fi
+else
     echo "You Have Given $# Arguments. Please Provide Valid Input."
 fi
